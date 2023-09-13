@@ -3,12 +3,13 @@
     <!-- Main content -->
     <main>
 
-        <div class="breadCrumbs">
-            <a href="#">Главная</a>
-            /
-            <p>О компании</p>
-        </div>
 
+        <x-breadcrumbs cur="О компании" :pages="[
+                // [
+                //   'href' => '#',
+                //   'text' => 'Components',
+                // ]
+            ]" />
         <div class="aboutCompany">
             <section class="main-aboutUs">
                 <div class="main-aboutUs__content">
@@ -29,45 +30,17 @@
                 <h2>Почему нас выбирают</h2>
 
                 <ul>
-                    <li>
-                        <svg>
-                            <use href="#advantages1"></use>
-                        </svg>
+                    @foreach($advantag as $advantag)
 
-                        <p>Уникальные коллекции украшений</p>
-                    </li>
+                        <li>
+                            <svg>
 
-                    <li>
-                        <svg>
-                            <use href="#advantages2"></use>
-                        </svg>
+                                <use href="{{$advantag->tag}}"></use>
+                            </svg>
 
-                        <p>Премиальное качество</p>
-                    </li>
-
-                    <li>
-                        <svg class="advantages3">
-                            <use href="#advantages3"></use>
-                        </svg>
-
-                        <p>Быстрая отправка заказа в любую точку России точно в срок</p>
-                    </li>
-
-                    <li>
-                        <svg>
-                            <use href="#advantages4"></use>
-                        </svg>
-
-                        <p>Фирменная упаковка</p>
-                    </li>
-
-                    <li>
-                        <svg>
-                            <use href="#advantages5"></use>
-                        </svg>
-
-                        <p>Особые условия для оптовиков</p>
-                    </li>
+                            <p>{{$advantag->text}}</p>
+                        </li>
+                    @endforeach
                 </ul>
             </section>
 

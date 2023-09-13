@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <meta name="description" content="">
     <title></title>
-
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/images/favicon.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -98,7 +98,28 @@
                   fill="#FE4947" />
         </g>
     </symbol>
-
+    <symbol id="eyePure" viewBox="0 0 24 24">
+        <g clip-path="url(#clip0_789_6481)">
+            <path
+                d="M23.8375 12.4947C24.0628 12.1861 24.053 11.7648 23.813 11.466C20.1831 7.00339 16.2642 4.74023 12.1592 4.74023C5.19827 4.74023 0.363346 11.226 0.162503 11.5003C-0.0628328 11.8089 -0.0530355 12.2302 0.186996 12.529C3.81197 16.9966 7.73085 19.2597 11.8359 19.2597C18.7968 19.2597 23.6317 12.774 23.8375 12.4947ZM11.8359 17.5795C8.41666 17.5795 5.08561 15.6984 1.9211 11.9951C3.16045 10.5304 7.09893 6.42046 12.1592 6.42046C15.5784 6.42046 18.9095 8.30152 22.074 12.0049C20.8346 13.4696 16.8962 17.5795 11.8359 17.5795Z"
+                fill="#AAA49E"/>
+            <path
+                d="M11.9972 7.7334C9.64583 7.7334 7.73047 9.64875 7.73047 12.0001C7.73047 14.3514 9.64583 16.2668 11.9972 16.2668C14.3485 16.2668 16.2638 14.3514 16.2638 12.0001C16.2638 9.64875 14.3485 7.7334 11.9972 7.7334ZM11.9972 14.5866C10.5717 14.5866 9.41069 13.4256 9.41069 12.0001C9.41069 10.5746 10.5717 9.41362 11.9972 9.41362C13.4227 9.41362 14.5836 10.5746 14.5836 12.0001C14.5836 13.4256 13.4227 14.5866 11.9972 14.5866Z"
+                fill="#AAA49E"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_789_6481">
+                <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </symbol>
+    <symbol id="hidePassword" viewBox="0 0 24 24">
+        <g clip-path="url(#clip0_1766_3249)">
+            <path
+                d="M14.9796 12.2022L16.3427 10.839C16.4419 11.2101 16.5 11.598 16.5 12C16.5 14.4814 14.4814 16.5 12 16.5C11.598 16.5 11.2101 16.4419 10.839 16.3427L12.2021 14.9796C13.6926 14.878 14.8779 13.6926 14.9796 12.2022ZM23.9055 11.6357C23.8132 11.4698 22.5049 9.17723 19.9474 7.23436L18.8559 8.3258C20.7208 9.69698 21.9024 11.2962 22.3676 12.0012C21.4787 13.3547 17.9916 18 12 18C11.1015 18 10.266 17.8851 9.47981 17.7017L8.24738 18.9342C9.38044 19.2816 10.6258 19.5 12 19.5C19.8512 19.5 23.7437 12.6555 23.9055 12.3644C24.0315 12.1377 24.0315 11.8624 23.9055 11.6357ZM20.7803 4.2803L4.28025 20.7803C4.13381 20.9267 3.94181 21 3.75 21C3.55819 21 3.36619 20.9267 3.21975 20.7803C2.92669 20.4872 2.92669 20.0127 3.21975 19.7198L5.319 17.6205C1.92525 15.5717 0.200812 12.5558 0.0945 12.3644C-0.0315 12.1377 -0.0315 11.8622 0.0945 11.6355C0.256312 11.3445 4.14881 4.50005 12 4.50005C14.0301 4.50005 15.7884 4.96317 17.2916 5.64792L19.7197 3.2198C20.0128 2.92673 20.4874 2.92673 20.7803 3.2198C21.0731 3.51286 21.0733 3.98742 20.7803 4.2803ZM6.43744 16.5021L8.33625 14.6033C7.81181 13.8675 7.5 12.9704 7.5 12C7.5 9.51867 9.51863 7.50005 12 7.50005C12.9703 7.50005 13.8675 7.81186 14.6033 8.33611L16.1387 6.80067C14.9256 6.31486 13.5471 6.00005 12 6.00005C6.00844 6.00005 2.52131 10.6454 1.63256 11.9989C2.19694 12.8543 3.81919 15.0195 6.43744 16.5021ZM9.42506 13.5143L13.5142 9.42511C13.0682 9.16167 12.5546 9.00005 12 9.00005C10.3459 9.00005 9 10.3459 9 12C9 12.5547 9.16162 13.0682 9.42506 13.5143Z"
+                fill="#AAA49E"/>
+        </g>
+    </symbol>
     <symbol id="basketIco" viewBox="0 0 24 24">
         <g>
             <path
@@ -917,7 +938,8 @@
     <!-- Header -->
 
     <header class="header">
-        <div class="header-content header-padding headerAbsolute">
+
+        <div class="header-content header-padding {{isset($headerAbsolute)}} ">
             <div class="header-content__btnsContainer">
 
                 <button class="header-content__burgerBtn">
@@ -926,7 +948,7 @@
                     <div></div>
                 </button>
 
-                <a href="#" class="header-content__logo">
+                <a href="/" class="header-content__logo">
                     <svg>
                         <use href="#logo"></use>
                     </svg>
@@ -950,7 +972,7 @@
                             0
                         </div>
                     </a>
-                    <a href="#">
+                    <a id="content__auth">
                         <svg>
                             <use href="#humanIco"></use>
                         </svg>
@@ -960,7 +982,7 @@
 
             <ul class="header-content__list">
                 <li>
-                    <a href="{{route('contacts')}}">Украшения</a>
+                    <a href="{{route('decorations')}}">Украшения</a>
                 </li>
                 <li>
                     <a href="{{route('contacts')}}">Аксессуары для волос</a>
@@ -983,17 +1005,17 @@
             <button class="header-menu__cross"></button>
             <ul>
                 <li>
-                    <a href="{{route('contacts')}}">Украшения</a>
+                    <a href="{{route('decorations')}}">Украшения</a>
                 </li>
                 <li>
                     <a href="{{route('contacts')}}">Аксессуары для волос</a>
                 </li>
 
                 <li>
-                    <a href="{{route('contacts')}}">О компании</a>
+                    <a href="{{route('aboutcompany')}}">О компании</a>
                 </li>
                 <li>
-                    <a href="{{route('contacts')}}">Оплата и доставка</a>
+                    <a href="{{route('delivery')}}">Оплата и доставка</a>
                 </li>
                 <li>
                     <a href="{{route('contacts')}}">Контакты</a>
@@ -1010,7 +1032,7 @@
             </div>
         </div>
     </header>
-    <!-- Main content -->
+
     @yield('content')
 
     <!-- Footer -->
@@ -1026,16 +1048,16 @@
                 <div class="footer-content__information">
                     <button class="footer-content__accordion">Информация</button>
                     <ul class="footer-content__panel">
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Оплата и доставка</a></li>
+                        <li><a href="{{route('aboutcompany')}}">О компании</a></li>
+                        <li><a href="{{route('contacts')}}">Контакты</a></li>
+                        <li><a href="{{route('delivery')}}">Оплата и доставка</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-content__question">
                     <h2>Нужна<br>консультация?</h2>
 
-                    <a href="#" class="main-aboutUs__arrowBtn">
+                    <a href="#" id="content__question" class="main-aboutUs__arrowBtn">
                         Задать вопрос
                         <svg>
                             <use href="#aboutUsArrow"></use>
@@ -1046,22 +1068,122 @@
                 <div class="footer-content__catalog">
                     <button class="footer-content__accordion">Каталог</button>
                     <ul class="footer-content__panel">
-                        <li><a href="#">Украшения</a></li>
+                        <li><a href="{{route('decorations')}}">Украшения</a></li>
                         <li><a href="#">Аксессуары для волос</a></li>
-                        <li><a href="#">Коллекции</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="footer-description">
-            <a href="#">
-                Политика обработки персональных данных
-            </a>
+
 
             <p>© 2022. Интернет-магазин бижутерии Novaya Ya. Все права защищены</p>
         </div>
     </footer>
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-content__title">Нужна консультация?</p>
+            <p class="modal-content__subtitle">
+                Заполните форму ниже и мы свяжемся с вами
+            </p>
+
+            <form action="@if(isset($asd)){{route($asd)}}@endif" method="post">
+                @csrf
+                <input type="text" name="name" placeholder="Имя*">
+                <input type="tel" name="phone" placeholder="Телефон">
+                <input type="email" name="mail" placeholder="E-mail*">
+                <input type="text" name="comment" placeholder="Комментарий">
+
+                <input type="submit" class="modal-content__submit" value="оставить заявку">
+            </form>
+            @foreach($errors->all() as $key => $error)
+                <div class="alert-danger" role="alert">
+                    {{$error}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <div id="entranceModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-content__title">Вход</p>
+            <p class="modal-content__subtitle">
+                Еще нет аккаунта?
+                <button id="content__registration">Регистрация</button>
+            </p>
+            <form  method="post" target="_top" action="/?login=yes">
+
+
+                <input type="email" name="mail" placeholder="E-mail*">
+                <div class="passwordRecovery-content__input">
+                    <input type="password" name="oldPassword" placeholder="Пароль">
+
+                </div>
+
+                <input class="modal-content__submit" type="submit" name="Login" value="Вход" wfd-id="id15">
+                <div class="modal-content__redBtn" id="fogot__registration">
+                    Не помните пароль?
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-content__title">Восстановление пароля</p>
+            <p class="modal-content__subtitle">
+                Пожалуйста, введите email, указанный вами при регистрации. Вы получите ссылку для восстановления пароля
+            </p>
+
+            <form action="#">
+                <input type="email" name="mail" placeholder="E-mail*">
+                <input type="submit" class="modal-content__submit" value="Сбросить пароль">
+            </form>
+        </div>
+    </div>
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-content__title">Регистрация</p>
+            <p class="modal-content__subtitle">
+                Уже есть аккаунт?
+                <button>Войти</button>
+            </p>
+
+            <form action="#">
+                <input type="text" name="name" placeholder="Имя*">
+                <input type="email" name="mail" placeholder="E-mail*">
+                <input type="tel" name="phone" placeholder="Телефон">
+                <div class="passwordRecovery-content__input">
+                    <input type="text" name="oldPassword" placeholder="Подтверждение пароля">
+                    <button>
+                        <svg>
+                            <use href="#hidePassword"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="basket-order__agreement">
+                    <input class="basket-order__agreement_checkBox" type="checkbox" id="agreementCheckbox" name="agreement">
+                    <label for="agreementCheckbox">Согласие на обработку персональных данных</label>
+                </div>
+
+                <input type="submit" class="modal-content__submit" value="Регистрация">
+            </form>
+        </div>
+    </div>
+    <div id="thanksModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <svg>
+                <use href="#thanksIco"></use>
+            </svg>
+            <p class="modal-content__title">Спасибо! Данные успешно отправлены</p>
+        </div>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
 <!-- JS -->

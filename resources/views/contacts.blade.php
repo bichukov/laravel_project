@@ -3,12 +3,13 @@
     <!-- Main content -->
     <main>
 
-        <div class="breadCrumbs">
-            <a href="#">Главная</a>
-            /
-            <p>Контакты</p>
-        </div>
 
+        <x-breadcrumbs cur="Контакты" :pages="[
+                // [
+                //   'href' => '#',
+                //   'text' => 'Components',
+                // ]
+            ]" />
         <section class="contacts">
             <div class="contacts-content pageContainer">
                 <h2>Контакты</h2>

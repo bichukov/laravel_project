@@ -22,47 +22,26 @@
         </section>
 
         <section class="main-announcement">
-            <div class="main-announcement__content_first">
-                <div class="main-announcement__text">
-                    <h2>Украшения</h2>
-                    <a href="#">Перейти в каталог</a>
-                </div>
+            @foreach($category as $category)
 
-                <div class="main-announcement__imgContainer">
-                    <picture>
-                        <source srcset="/images/main/mainImg1Mobile.jpg" media="(max-width: 650px)">
-                        <img src="/images/main/mainImg1.jpg" alt="#">
-                    </picture>
-                </div>
-            </div>
+                <div class=@if($category->id ===1) "main-announcement__content_first" @else "main-announcement__content_second" @endif>
+                    <div class="main-announcement__text">
+                        <h2>{{$category->name}}</h2>
+                        <a href="{{$category->url_path}}">Перейти в каталог</a>
+                    </div>
 
-            <div class="main-announcement__content_second">
-                <div class="main-announcement__imgContainer">
-                    <picture>
-                        <source srcset="/images/main/mainImg2Mobile.jpg" media="(max-width: 650px)">
-                        <img src="/images/main/mainImg2.jpg" alt="#">
-                    </picture>
+                    <div class="main-announcement__imgContainer">
+                        <picture>
+                            <source srcset="{{$category->image}}" media="(max-width: 650px)">
+                            <img src="{{$category->image}}" alt="#">
+                        </picture>
+                    </div>
                 </div>
+            @endforeach
 
-                <div class="main-announcement__text">
-                    <h2>Аксессуары для волос</h2>
-                    <a href="#">Перейти в каталог</a>
-                </div>
-            </div>
 
-            <div class="main-announcement__content_third">
-                <div class="main-announcement__text">
-                    <h2>коллекции</h2>
-                    <a href="#">Перейти в каталог</a>
-                </div>
 
-                <div class="main-announcement__imgContainer">
-                    <picture>
-                        <source srcset="/images/main/mainImg3Mobile.jpg" media="(max-width: 650px)">
-                        <img src="/images/main/mainImg3.jpg" alt="#">
-                    </picture>
-                </div>
-            </div>
+
         </section>
 
         <section class="main-recommendations">
@@ -70,357 +49,47 @@
 
             <div class="swiper main-recommendations__swiper">
                 <ul class="swiper-wrapper">
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
+                    @foreach($section_product as $popular)
+                        <li class="swiper-slide">
+                            <div class="catalog-item">
+                                <a href="#" class="catalog-item__content">
+                                    <div class="swiper changeColorSwiper">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide">
+                                                <div class="main-recommendations__imgContainer">
+                                                    <img src="{{$popular->image}}" alt="#">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
+                                    </div>
+
+                                    <p>{{$popular->title}}</p>
+
+                                    <div class="main-recommendations__priceContainer">
+                                        <div class="main-recommendations__oldPrice">
+                                            {{$popular->price}} ₽
+                                        </div>
+
+                                        <div class="main-recommendations__actualPrice">
+                                            {{$popular->sale_price}} ₽
                                         </div>
                                     </div>
-                                </div>
+                                </a>
 
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
+                                <a href="#" class="main-recommendations__basketIco">
+                                    <svg>
+                                        <use href="#itemBasket"></use>
+                                    </svg>
+                                </a>
 
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
 
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    @endforeach
 
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
 
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
-
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
-
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
-
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
-
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
-
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
-
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
-
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
-
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
-
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
-
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
-
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="swiper-slide">
-                        <div class="catalog-item">
-                            <a href="#" class="catalog-item__content">
-                                <div class="swiper changeColorSwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item1.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="main-recommendations__imgContainer">
-                                                <img src="/images/main/item2.jpg" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p>Авторское кольцо безразмерное с посеребрением</p>
-
-                                <div class="main-recommendations__priceContainer">
-                                    <div class="main-recommendations__oldPrice">
-                                        1 850 ₽
-                                    </div>
-
-                                    <div class="main-recommendations__actualPrice">
-                                        1 500 ₽
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="main-recommendations__basketIco">
-                                <svg>
-                                    <use href="#itemBasket"></use>
-                                </svg>
-                            </a>
-
-                            <div class="main-recommendations__btnContainer">
-                                <button class="main-recommendations__silverBtn"></button>
-                                <button class="main-recommendations__goldBtn"></button>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
                 <div class="recommendations-swiper-pagination"></div>
             </div>
@@ -457,7 +126,7 @@
                         австрийские кристаллы и стразы Swarovski, чешские Preciosa, медицинская сталь, родий (rhodium),
                         гальваническое покрытие из серебра и золота.</p>
 
-                    <a href="#" class="main-aboutUs__arrowBtn">
+                    <a href="{{route('aboutcompany')}}" class="main-aboutUs__arrowBtn">
                         Узнать подробнее
                         <svg>
                             <use href="#aboutUsArrow"></use>

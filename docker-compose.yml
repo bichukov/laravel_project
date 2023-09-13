@@ -17,7 +17,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root             # пароль для базы данных (логин по умолчанию root)
       MYSQL_DATABASE: laravel_project       # имя базы данных
-
+    ports:
+        - "3307:3306"
+    expose:
+        - 3306
+    volumes:
+    - 'sailmysql:/var/lib/mysql'
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
@@ -29,3 +34,6 @@ services:
       - UPLOAD_LIMIT=64M
     depends_on:
       - db
+volumes:
+    sailmysql:
+        driver: local
