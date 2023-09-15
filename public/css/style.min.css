@@ -5595,11 +5595,10 @@ header .header-menu .header-menu__searchContainer input {
 .modal-content {
     background: #f4f2ed;
     border-radius: .6rem;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 3.2rem 4rem;
     width: 32.485%;
-    transform: translateY(-50px);
-    opacity: 0;
+
     transition: transform .3s ease, opacity .3s ease
 }
 

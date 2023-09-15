@@ -1,12 +1,12 @@
 @extends('main')
 @section('content')
     <!-- Main content -->
-    <x-breadcrumbs cur="Каталог" :pages="[
+    <x-breadcrumbs cur="{{$path}}" :pages="[
                  [
                    'href' => 'decorations',
                    'text' => 'Украшения',
                  ]
-            ]" />
+            ]"/>
     <section class="catalog pageContainer">
 
 
@@ -16,7 +16,9 @@
 
                 <li>
                     <div class="catalog-item">
-                        <a href="{{route('decorations2', [ 'path'=> $path, 'id'=> $product->id])}}" class="catalog-item__content">
+
+                        <a href="{{route('decorations2', [ 'path'=> $path, 'id'=> $product->id])}}"
+                           class="catalog-item__content">
                             <div class="swiper changeColorSwiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -40,17 +42,20 @@
                                 </div>
                             </div>
                         </a>
-
-                        <a href="#" class="main-recommendations__basketIco">
-                            <svg>
-                                <use href="#itemBasket"></use>
-                            </svg>
-                        </a>
+                        <form action="{{ route('cart.add', ['product' => $product->id]) }}" method="POST">
+                            @csrf
+                            <button style="    background: center;
+    border: none;
+    width: 10%;" href="#" class="main-recommendations__basketIco">
+                                <svg>
+                                    <use href="#itemBasket"></use>
+                                </svg>
+                            </button>
+                        </form>
 
 
                     </div>
                 </li>
-
 
             @endforeach
 

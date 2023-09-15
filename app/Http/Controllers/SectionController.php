@@ -8,7 +8,7 @@ use App\Models\Product;
 
 use Illuminate\Http\Request;
 
-class SectionsController extends Controller
+class SectionController extends Controller
 {
     public function decorations()
     {
@@ -38,12 +38,10 @@ class SectionsController extends Controller
     {
 
         $sections_id = Section::where('url_path', $url_path)->get();
-        foreach ($sections_id as $ci) {
-            $sections_id = ($ci->id);
-        }
-        $section_product = Product::where('is_active', 1)->where('section_id', $sections_id)->get();
 
-        return view('product', ['path' => $url_path, 'id' => $id, 'section_product' => $section_product]);
+        $element_product = Product::where('is_active', 1)->where('id', $id)->get();
+
+        return view('product', ['path' => $url_path, 'id' => $id, 'element_product' => $element_product]);
 
     }
 }

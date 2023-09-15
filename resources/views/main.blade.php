@@ -955,28 +955,27 @@
                 </a>
 
                 <div class="header-content__iconsContainer">
-                    <div class="header-content__searchContainer">
-                        <input type="text" name="search" placeholder="Найти">
-                        <button>
-                            <svg>
-                                <use href="#loopIco"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <a href="#" class="header-content__basketIco">
+                    <a href="{{route('cart.get')}}" class="header-content__basketIco">
                         <svg>
                             <use href="#basketIco"></use>
                         </svg>
 
-                        <div class="header-content__basketIcoCount">
-                            0
-                        </div>
+
                     </a>
-                    <a id="content__auth">
+                    @auth
+                    <a href="{{route('account.show')}}">
                         <svg>
                             <use href="#humanIco"></use>
                         </svg>
                     </a>
+                    @endauth
+                    @guest
+                        <a href="{{route('login')}}">
+                            <svg>
+                                <use href="#humanIco"></use>
+                            </svg>
+                        </a>
+                    @endguest
                 </div>
             </div>
 
@@ -984,9 +983,9 @@
                 <li>
                     <a href="{{route('decorations')}}">Украшения</a>
                 </li>
-                <li>
-                    <a href="{{route('contacts')}}">Аксессуары для волос</a>
-                </li>
+{{--                <li>--}}
+{{--                    <a href="{{route('contacts')}}">Аксессуары для волос</a>--}}
+{{--                </li>--}}
 
                 <li>
                     <a href="{{route('aboutcompany')}}">О компании</a>

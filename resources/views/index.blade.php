@@ -52,7 +52,10 @@
                     @foreach($section_product as $popular)
                         <li class="swiper-slide">
                             <div class="catalog-item">
-                                <a href="#" class="catalog-item__content">
+                                @foreach($path as $path1)
+
+                                <a href="{{route('decorations2', [ 'path'=> $path1->url_path, 'id'=> $popular->id])}}" class="catalog-item__content">
+                                    @endforeach
                                     <div class="swiper changeColorSwiper">
                                         <div class="swiper-wrapper">
 
@@ -76,12 +79,17 @@
                                         </div>
                                     </div>
                                 </a>
+                                <form action="{{ route('cart.add', ['product' => $popular->id]) }}" method="POST">
+                                    @csrf
+                                    <button style="    background: center;
+    border: none;
+    width: 10%;" href="#" class="main-recommendations__basketIco">
+                                        <svg>
+                                            <use href="#itemBasket"></use>
+                                        </svg>
+                                    </button>
+                                </form>
 
-                                <a href="#" class="main-recommendations__basketIco">
-                                    <svg>
-                                        <use href="#itemBasket"></use>
-                                    </svg>
-                                </a>
 
 
                             </div>
